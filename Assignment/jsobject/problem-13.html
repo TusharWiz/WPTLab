@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Circle Rectangle</title>
+    <script>
+
+        function displaycircle(area,circumfirence){
+            document.getElementById("mydiv").innerHTML += "Area of Circle :"+area+"Circumfirance of circle "+circumfirence+"<br>"
+        }
+
+        function displayrec(length,breadth){
+            var area = length*breadth;
+            document.getElementById("mydiv").innerHTML += "Area of Rectanle "+area+"lenght :"+length+"breadth"+breadth+"<br>"
+        }
+
+        function circle(){
+            var circle ={radius:document.getElementById("radius").value}
+            var area = parseFloat(3.14*Math.pow(circle.radius,2))
+            var circumfirence = parseFloat(3.14*circle.radius)
+            displaycircle(area,circumfirence)
+
+        }
+        function rect(){
+            var rectangle = {length:parseInt(document.getElementById("length").value),
+                             breadth:parseInt(document.getElementById("Breadth").value)
+                                }
+
+            displayrec(rectangle.length,rectangle.breadth)
+            
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Radius of Circle</td>
+            <td><input type="text" name="radius" id="radius"></td>
+        </tr>
+        <tr>
+            <td>Length of Rectangle</td>
+            <td><input type="text" name="length" id="length"></td>
+        </tr>
+        <tr>
+            <td>Breadth of Rectangle</td>
+            <td><input type="text" name="Breadth" id="Breadth"></td>
+        </tr>
+        <tr>
+            <td><button type="button" name="circle" id="circle" onclick="circle()">Circle</button></td>
+            <td><button type="button" id="Rectangle" name="Rectangle" onclick="rect()">Rectangle</button></td>
+        </tr>
+    </table>
+
+    <div id="mydiv"></div>
+</body>
+</html>

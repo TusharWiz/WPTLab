@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Payment calculator</title>
+    <!-- <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            function validateamount(amount){
+                if(amount>1500000){
+                    $('#err').html("Enter the amount with in 7lk to 15lk")
+                    return true;
+                }
+                else{
+                    $('#err').html("")
+                    return true;
+                }
+
+              
+            }
+            function validaterate(rate){
+                if(rate<0)
+                {
+                    $('#errrate').html("Enter the valid rate")
+                    return false;
+                }
+                else{
+                    $('#err').html("")
+                    return true;
+                }
+            }
+            function emi(){
+                var amount=parseInt($('#amountln').val())
+                var rate = $('#rate').val();
+                var period = $('#period').val();
+                
+                // validate amount
+                if(amount>1500000 && amount>700000){
+                    if(rate>0){
+                        if(period>=7 && period<=15){
+                            aletr("hello")
+                        }
+                    }
+            }
+        
+            }
+
+
+            $('#btn').click(function(){
+                var v1= emi()
+            })
+
+        })
+    </script> -->
+    <style>
+        #err{color:red;}
+    </style>
+    <script>
+        function validateamt(amount){
+            if(amount>700000 && amount<1500000){
+                document.getElementById("err").innerHTML=""
+                return true;
+            }
+            else
+            {
+                document.getElementById("err").innerHTML="enter valid amount"
+                return false;
+            }
+        }
+        function validtaerate(rate){
+            if(rate>0){
+                document.getElementById("errrate").innerHTML=""
+                return true;
+            }
+            else
+            {
+                document.getElementById("errrate").innerHTML="enter valid rate"
+                return false;
+            }
+        }
+        function validateperiod(period){
+            if(period>7 && period<15){
+                document.getElementById("errperiod").innerHTML=""
+                return true;
+            }
+            else
+            {
+                document.getElementById("errperiod").innerHTML="enter valid rate"
+                return false;
+            }
+        }
+        function emi(result,period){
+            var emi=parseFloat(result/period*12)
+            alert("hello")
+            document.getElementById("emi").value = emi;
+        }
+
+        function payment(result){
+            document.getElementById("totalpayment").value = result;
+        
+        }
+
+        function interest(result,amount){
+            var a = result-amount
+            document.getElementById("interest").value = a;
+        }
+        function loan(){
+            var amount=parseInt(document.getElementById("amountln").value)
+            var rate=parseInt(document.getElementById("rate").value);
+            var period=parseInt(document.getElementById("period").value)
+
+            var f1= validateamt(amount);
+            var f2=validtaerate(rate);
+            var f3=validateperiod(period)
+            if(f1 && f2 && f3){
+                var ci = (amount*Math.pow((1+rate/100),period));
+                emi(ci,period)
+                payment(ci)
+                interest(ci,amount)
+                $('#resulttable').show(1000)
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Enter loan information</h1>
+    <table>
+        <tr>
+            <td>Amount of loan(any currency) </td>
+            <td><input type="text" name="amountln" id="amountln"></td>
+            <td id="err"></td>
+        </tr>
+
+        <tr>
+            <td>Annunal percentage rate of interest</td>
+            <td><input type="text" name="rate" id="rate"></td>
+            <td id="errrate"></td>
+        </tr>
+
+        <tr>
+            <td>Repayment period in years</td>
+            <td><input type="text" name="period" id="period"></td>
+            <td id="errperiod"></td>
+        </tr>
+    </table>
+
+    <button type="button" id="btn" name="btn" onclick="loan()">Compute</button>
+    <h1>Payment information</h1>
+
+    <table id="resulttable" >
+        <tr>
+            <td>Your monthly payment will be</td>
+            <td><input type="text" name="emi" id="emi"></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>Your total payment will be</td>
+            <td><input type="text" name="totalpayment" id="totalpayment"></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>Your total interest payment will be</td>
+            <td><input type="text" name="interest" id="interest"></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

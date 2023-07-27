@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Object</title>
+</head>
+<body>
+    <script>
+        var per={
+            pid:123,
+            pname:"Tushar",
+            salary:60000,
+            display : function(){
+                document.write(`${this.pid}  ${this.pname}  ${this.salary}`)
+            },
+
+            display1 : function(){
+                document.write(`${per[this.salary]}`)
+            }
+
+           
+        }
+        per.display();
+        per.display1();
+        for(var p in per){
+            document.write(`${per[p]}`)
+        }
+    </script>
+</body>
+</html>

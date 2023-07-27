@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Range 0-1000</title>
+    <script>
+        function range(){
+            var result=0;
+            var number= parseInt(document.getElementById("num").value)
+            var temp = number;
+            if((number>1000) || (number<0) ){
+                //alert("if condition")
+                document.getElementById("mydiv").innerHTML="out of range"
+            }
+            else{
+                while(number!==0)
+                {
+                    var rem = parseInt(number%10);
+                    result = parseInt(result+rem);
+                    number = parseInt(number/10);
+                }
+
+                document.getElementById("mydiv").innerHTML ="sum of digits of"+temp+"is "+result
+            }
+        }
+        // how to write express js?
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Enter number</td>
+            <td><input type="text" id="num" name="num"></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" id="btn" name="btn" onclick="range()">Result</button>
+            </td>
+        </tr>
+    </table>
+    <div id="mydiv"></div>
+</body>
+</html>

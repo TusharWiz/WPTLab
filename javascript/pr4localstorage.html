@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <script>
+        var cnt=0;
+        function increment(){
+            if(typeof(Storage)!==undefined){// to check local storage avialabel 
+                alert("if")
+                localStorage.setItem("count","1")
+            }
+            else{
+                alert(parseInt(localStorage.getItem("count")))
+                cnt = parseInt(localStorage.getItem("count"))+1
+                alert(cnt)
+                localStorage.setItem("count",cnt)
+               
+            }
+            document.getElementById("mydiv").innerHTML= localStorage.count;
+        }
+
+        function decreament(){
+            if(typeof(Storage)!==undefined){
+                if(localStorage.count===undefined || localStorage.count===0){
+                    localStorage.count =0;
+                }
+            }
+            else{
+                var cnt = parseInt(localStorage.getItem("count"))-1;
+                localStorage.setItem("count",cnt)
+            }
+            document.getElementById("mydiv").innerHTML = localStorage.count
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><button type="button" onclick="increment()">Add count</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="decrement()">decrement</button></td>
+        </tr>
+    </table>
+
+    <div id="mydiv">
+       
+    </div>
+</body>
+</html>

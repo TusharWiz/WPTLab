@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Website List</title>
+    <script>
+
+       var arrlinks=[]
+        function displays(arr=arrlinks){
+            // document.getElementById("mydiv").value=""
+            var str=""
+            for(ob of arr){
+                str += ob+" "
+               
+            }
+            document.getElementById("mydiv").innerHTML =str
+            console.log(arrlinks)
+        }
+        function searchurl(event){
+            var text = document.getElementById("search").value
+            var searcharr=arrlinks.filter(a=>a.includes(text))
+            console.log(searcharr)
+            displays(searcharr)
+        }
+        function addsite(){
+            var url = document.getElementById("url").value
+            arrlinks.push(url)
+            document.getElementById("url").value =""
+            //console.log(arrlinks)
+            // for(ob of arrlinks){
+            //     alert(ob)
+            // }
+            displays(arrlinks);
+        }
+
+        function changebackground(ev){
+            var ob=ev.target
+            ob.setAttribute("style","background-color:red")
+        }
+        function resetbackground(ev){
+            var ob= ev.target
+            ob.setAttribute("style","background-color:white")
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Enter site name</td>
+            <td><input type="url" id="url" name="url" onfocus="changebackground(event)" onblur="resetbackground(event)"  autofocus ></td>
+        </tr>
+        <tr>
+            <td><button type="button" id="btn" name="btn" onclick="addsite()">Add Site</button></td>
+            <td><button type="button" id="disbtn" name="disbtn">display</button></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="search" name="search" onkeypress="searchurl(event)" onfocus="changebackground(event)" onblur="resetbackground(event)"></td>
+            <td><button type="button" id="searchbtn" name="searchbtn" onclick="searchurl()">search</button></td>
+        </tr>
+    </table>
+
+    <div id="mydiv"></div>
+</body>
+</html>

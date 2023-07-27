@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Internal Usage Survey</title>
+    <link rel="stylesheet" href="survey.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Internet Usage Survey</h1>
+    </div>
+
+    <div class="forminfo">
+        <p>This survey being conducted to help identify the Internet usage patterns of our coustomers. <br>
+        Please take a few moments to complete and submit this short form.Thank you for your cooperation</p>
+    </div>
+
+    <table class="main">
+        <tr id="start">
+            <td>What type of Internet connection do you hava?<br>
+            (Select one)</td>
+            <td>
+                <select name="type" id="type" multiple>
+                    <option value="Dail-up">Dail-up</option>
+                    <option value="DSL">DSL</option>
+                    <option value="High Speed Cabale">High Speed Cabale</option>
+                    <option value="4G">4G</option>
+                    <option value="5G">5G</option>
+                    <option value="Other">Other</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>What type of computer do you use at home?</td>
+            <td><input type="radio" name="pctype" id="desk"> 
+            <label for="pctype">Desktop</label>
+            <input type="radio" name="pctype" id="lap"> 
+            <label for="pctype">Laptop</label></td>
+        </tr>
+        
+        <tr>
+            <td>How would you describe your main reason for using the Internet</td>
+            <td>
+                <input type="radio" name="reason" id="work">
+                <label for="reason">To do work-related activities</label><br>
+
+                <input type="radio" name="reason" id="school">
+                <label for="reason">To do school-related activities</label><br>
+
+                 <input type="radio" name="reason" id="entertainment">
+                <label for="reason">For entertainment purpose</label> <br>
+
+                <input type="radio" name="reason" id="other">
+                <label for="reason">Ohter actovities</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <fieldset class="field"> <legend>Type of site visited</legend>
+                <p>What type of web sites do you access
+                    most often? <br>
+                    check all that apply <br>
+
+                    <input type="checkbox" id="improvement" name="improvement"><label for="improvement">Self Improvement</label><br> 
+
+                    <input type="checkbox" id="Entertainment" name="Entertainment"><label for="Entertainment">Entertainment</label><br>
+
+                    <input type="checkbox" id="News and Sport" name="News and Sport"><label for="News and Sport">News and Sport</label><br>
+
+                    <input type="checkbox" id="Refrence" name="Refrence"><label for="Refrence">Refrence</label><br>
+
+                    <input type="checkbox" id="Email" name="Email"><label for="Email">Email</label>
+                </p></fieldset>
+            </td>
+
+            <td>
+                <fieldset class="field"><legend>Time spent using Internet</legend>
+                <p>During an average week, how long do you spend online? <br>
+                <input type="radio" name="time" id="3">
+                <label for="3">0-3 Hours</label> <br>
+                <input type="radio" name="time" id="6">
+                <label for="6">4-6 Hours</label> <br>
+                <input type="radio" name="time" id="10">
+                <label for="10">7-10 Hours</label> <br>
+                <input type="radio" name="time" id="14">
+                <label for="14">11-14 Hours</label> <br>
+                <input type="radio" name="time" id="15">
+                <label for="15">15- Hours</label>
+                </p></fieldset>
+            </td>
+        </tr>
+    </table>
+ <br><br>
+    <div>
+        <p>Please comment as your openions Internet privacy and safety: <br><textarea name="comment" id="comment" cols="100" rows="5"></textarea></p>
+    </div>
+    <br>
+    <br>
+     
+    <table class="info">
+        <tr>
+            <td>First Name <input type="text" id="fname" name="fname"></td>
+            <td>Last name <input type="text" name="fname" id="lname"></td>
+        </tr>
+
+        <tr>
+            <td>Age <input type="text" id="age" name="age"></td>
+            <td>Zip Code <input type="text" id="zip" name="zip"></td>
+        </tr>
+
+        <tr>
+            <td><button type="submit" id="submit" name="submit">Click to submit</button></td>
+            <td><button type="submit" id="btn" name="btn"> Clear Form</button></td>
+        </tr>
+    </table>
+</body>
+</html>

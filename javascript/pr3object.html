@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Inheritance</title>
+</head>
+<body>
+    <script>
+        var child = function(name, salary, exp){
+            this.name = name;
+            this.salary =salary;
+            this.exp = exp
+        }
+
+        var mgr = function(designation,address){
+            this.designation = designation;
+            this.address = address
+        }
+
+        
+        var p1 = new child("tushar",45000,3)
+       var m1= new mgr("tushar",56000,3,"mgr","bende")
+       m1.__proto__=p1;
+       for(p in m1){
+        if(m1.hasOwnProperty(p)){
+        document.write(`${p}......${m1[p]}`)}
+        else{
+            document.write(`${p}......${m1[p]}`)
+        }
+       
+       }
+    </script>
+</body>
+</html>

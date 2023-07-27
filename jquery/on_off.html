@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>On Off </title>
+    <script src="jquery.js">
+    </script>
+    <script>
+        var cnt=2
+        $(document).ready(function(){
+            $('#btn1').on("click",function(){
+                var inp = $('#city1').clone()
+                inp.attr({"id":"city"+cnt})
+                cnt++
+                
+                $('#mydiv').append(inp)
+                $('#mydiv').append("<br>")
+            })
+
+            $('#btn2').click(function(){
+                $('#btn1').off("click")
+
+                var city=[]
+                $('input[name:city]').each(function(index){
+                    city.push(this.val())
+                })
+                console.log(city)
+            })
+
+            // $('#btn3').click(function(){
+            //     var str;
+            //     $(city).each(function(index){
+            //         str+=this.val();
+            //     })
+            // })
+        })
+    </script>
+</head>
+<body>
+    <div id="mydiv">
+    <input type="text" name="city" id="city1">
+    <button type="button" name="btn1" id="btn1">Add input</button>
+    <button type="button" name="btn2" id="btn2">Off the input</button>
+    <button type="button" name="btn3" id="btn3">Display</button><br>
+</div>
+</body>
+</html>

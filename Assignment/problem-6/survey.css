@@ -1,0 +1,27 @@
+body{
+    border: 2px solid blue;
+}
+
+.main {
+    width: 100%;
+}
+
+.field{
+    margin-right: 50px;
+}
+
+.info{
+    width: 100%;
+}
+
+.info #fname,#lname{
+    width: 400px;
+}
+
+.info #age{
+    width: 50px;
+}
+
+.info #zip{
+    width: 100px;
+}

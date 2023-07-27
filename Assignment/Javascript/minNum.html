@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Minimum number</title>
+    <script>
+        function Minimum(){
+            var arg=parseInt(document.getElementById("arg").value)
+
+            var arr=[];
+            for(var i=0;i<arg;i++){
+                arr[i] = parseInt(prompt("Enter the number"))
+            }
+
+            var ans = arr.reduce((acc,val)=>acc<val?acc:val)
+            document.getElementById("output").innerHTML="Minimum Number :"+ans;
+            document.getElementById("arg").value=""
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Number of Argumnet</td>
+            <td><input type="text" id="arg" autofocus></td>
+        </tr>
+        <tr ><td colspan="2">
+            <button type="button" id="btn" name="btn" onclick="Minimum()">Arguments</button>
+            </td>
+        </tr>
+    </table>
+    <div id="output"></div>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var employee=[]
+        function addemp(){
+            var name=document.getElementById("name").value;
+            var salary = parseInt(document.getElementById("salary").value)
+            var emp ={name:name,salary:salary}
+            employee.push(emp)
+        }
+
+        function displayemp(){
+            for(obj of employee)
+              document.write(`${obj.salary}`)
+        }
+    </script>
+    <title>Employee</title>
+</head>
+<body>
+    <table>
+        <tr>
+        <td>Employee Name:</td>
+        <td><input type="text" name="name" id="name"></td>
+    </tr>
+
+    <tr>
+        <td>Employee Salary :</td>
+        <td> <input type="text" name="salary" id="salary"></td>
+    </tr>
+
+    <tr>
+        <td><button type="button" id="btn" name="btn" onclick="addemp()">Add Employee</button></td>
+    </tr>
+
+    <tr>
+        <td><button type="button" onclick="displayemp()"> display</button></td>
+    </tr>
+    </table>
+
+    <div id="mydiv"></div>
+
+    <!-- <script>
+        var employee ={name:"rajat",salary:45000}
+        document.write(`${employee.name}`)
+    </script> -->
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <script>
+        function operation(){
+            var n1=parseInt(document.getElementById("num1").value)
+            var n2=parseInt(document.getElementById("num2").value)
+            var op=document.getElementById("op").value
+
+            switch (op) {
+                case "+":
+                    document.getElementById("output").innerHTML+="Addition of Numbers "+(n1+n2)
+                    break;
+                case "-":
+                    document.getElementById("output").innerHTML+="Subtraction of Numbers "+(n1-n2)
+                    break;
+                 case "*":
+                    document.getElementById("output").innerHTML+="Multiplication of Numbers "+(n1*n2)
+                    break;
+                 case "/":
+                    document.getElementById("output").innerHTML+="Divison of Numbers "+(n1/n2)
+                    break;
+                default:
+                    break;
+            }
+            document.getElementById("num1").value=""
+            document.getElementById("num2").value=""
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Number1 :</td>
+            <td><input type="text" id="num1" autofocus required ></td>
+        </tr>
+        <tr>
+            <td>Number2 :</td>
+            <td><input type="text" id="num2"></td>
+        </tr>
+        <tr>
+            <td>Operator :</td>
+            <td><input type="text" id="op" ></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" id="btn" name="btn" onclick="operation()">Result</button>
+            </td>
+        </tr>
+    </table>
+    <div id="output">
+
+    </div>
+</body>
+</html>

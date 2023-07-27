@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Group Member</title>
+    <script>
+        var namearr=[]
+        function result(){
+            document.getElementById("mydiv").innerHTML =namearr
+        }
+        function addmember(){
+            var member = document.getElementById("name").value
+
+            if(namearr.length<5)
+            namearr.push(member.toUpperCase())
+            else
+            document.getElementById("errnm").innerHTML ="Array out of bound"
+
+            document.getElementById("name").value=""
+
+            console.log(namearr)
+
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr><td>Enter the group member name</td>
+        <td><input type="text" id="name" name="name"></td>
+            <td id="errnm"></td>
+    </tr>
+
+        <tr>
+            <td><button type="button" id="btn" name="btn" onclick="addmember()">Push</button></td>
+
+            <td><button type="button" id="rbtn" name="rbtn" onclick="result()">Result</button></td>
+        </tr>
+    </table>
+    
+    <div id="mydiv"></div>
+</body>
+</html>

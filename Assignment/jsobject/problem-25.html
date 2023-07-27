@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Problem-25</title>
+    <style>
+        table{
+            border-spacing: 10px;
+            border-collapse: collapse;
+            border-color: brown;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+    $(document).ready(function(){
+
+        function valiadtename(){
+            var name =$('#nm').val();
+            console.log(name.trim().length)
+        if(name.trim().length<6){
+            $('#errnm').html("Enter valid name")
+            return false;
+        }else{
+            $('#errnm').html("")
+            return true;
+        }
+        }
+        // $('table').css()
+
+        function validatebd(){
+            var billdate = $('#bdate').val()
+            var shipdate = $('#sdate').value
+            console.log(billdate)
+            if(billdate>shipdate){
+                $('#errbd').html("Billing date can't be greater than shipping date")
+                return false;
+            }
+            else{
+                $('#errbd').html("")
+                return true;
+            }
+        }
+
+        $('#btn').click(function(){
+            var v1= valiadtename();
+            var v2 = validatebd();
+            if(v1 && v2){
+                var id = $('#id').val()
+                var name = $('#nm').val()
+                var billingdate = $('#bdate').val()
+                var shippingatengdate = $('#sdate').val()
+                var order = $('#Order').val()
+
+                var str =`Order id : ${id} <br> Cust Name:${name}<br> BillingDate :${billingdate} <br> ShippingDate:${shippingatengdate} <br>
+                Order total:$${order}`
+                $('#mydiv').html(str)
+            }
+        })
+    })
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Order id</td>
+            <td><input type="text" name="id" id="id"></td>
+            <td id="errid"></td>
+        </tr>
+        <tr>
+            <td>Cust name</td>
+            <td><input type="text" name="nm" id="nm"></td>
+            <td id="errnm"></td>
+        </tr>
+
+        <tr>
+            <td>Enter billing date</td>
+            <td><input type="date" name="bdate" id="bdate"></td>
+            <td id="errbd"></td>
+        </tr>
+        <tr>
+            <td>Enter shipping date</td>
+            <td><input type="date" name="sdate" id="sdate"></td>
+            <td id="errsd"></td>
+        </tr>
+        <tr>
+            <td>Order total</td>
+            <td><input type="text" name="Order" id="Order"></td>
+        </tr>
+    </table>
+
+    <button type="button" id="btn" name="btn">Display</button>
+    <div id="mydiv"></div>
+</body>
+</html>

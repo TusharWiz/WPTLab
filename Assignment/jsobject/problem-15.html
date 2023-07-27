@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Reverse </title>
+    <script>
+        var wordsarr = [] //"tushar"
+       
+        var cnt = 0
+        var temp=""
+
+        function reversewords(){
+           // alert(wordsarr.length)
+           var revarr = []
+            for(var i=0;i<wordsarr.length;i++){
+                var temp=""
+                var str1=wordsarr[i]
+                for(var j=0;j<str1.length;j++){
+                    temp+= str1.charAt(str1.length-1-j)
+                }
+                revarr.push(temp)
+            }
+            //console.log(temp)
+            //displayarr(revarr)
+            console.log(revarr)
+
+            revarr.sort();
+            displayarr(revarr)
+            console.log(revarr)
+        }
+        function addword() {
+            var words = document.getElementById("words").value
+            
+            if (cnt < 5) {
+                wordsarr.push(words)
+                console.log(wordsarr)
+                displayarr(wordsarr)
+                cnt = cnt + 1
+                document.getElementById("words").value = ""
+            } else {
+                document.getElementById("err").innerHTML = "Array out of bound"
+            }
+           
+        }
+        function displayarr(arr = wordsarr) {
+           // document.getElementById("mydiv").value=""
+            var str=""
+                for(ob of arr){
+                    str += ob+" "
+                }
+                document.getElementById("mydiv").innerHTML=str
+        }
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Enter the Word</td>
+            <td><input type="text" name="words" id="words"></td>
+            <td id="errword"></td>
+        </tr>
+        <tr>
+            <td><Button type="button" id="btn" name="btn" onclick="addword()">Add</Button></td>
+            <!-- <td><button type="button" id="btn" name="btn" onclick="displayarr()">Display</button></td> -->
+            <td><button type="button" id="revbtn" name="revbtn" onclick="reversewords()">Result</button></td>
+        </tr>
+
+    </table>
+
+    <div id="mydiv"></div>
+</body>
+
+</html>

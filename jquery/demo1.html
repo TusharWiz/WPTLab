@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo1</title>
+    <script src="jquery.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('p').each(function (index,element){
+            alert($(element).html())
+        }
+        )
+
+        $('#btn').click(function(){
+            $('p').hide()
+        })
+    })
+</script>
+</head>
+<body>
+    <p>This is para1</p>
+    <p>This is para2</p>
+    <p>This is para3</p>
+
+    <button id="btn">on click</button>
+</body>
+</html>

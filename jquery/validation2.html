@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        Validation
+    </title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            function validatename(){
+                var name= $('#nm').val()
+                if(name.trim().length===0){
+                    $('#errnm').html("select name")
+                    return false
+                }
+                else
+                $('#errnm').html("")
+                return true;
+            }
+
+            function validateopt(){
+               var val= $('input[name=option]:checked').val()
+               //alert(val)
+               if(val===undefined){
+                $('#erropt').html("select option")
+                return true
+               }
+               else
+               $('#erropt').html("")
+            }
+            $('#btn').click(function(){
+                var v1=validatename()
+                var v2=validateopt()
+            })
+        })
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Enter name</td>
+            <td><input type="text" name="nm" id="nm"></td>
+            <td id="errnm"></td>
+        </tr>
+        <tr>
+            <td><button type="button" id="btn" name="btn">submit</button></td>
+            <td>
+                <input type="radio" name="option" id="A">
+                <label for="A">A</label>
+
+                <input type="radio" name="option" id="B">
+                <label for="B">B</label>
+
+                <input type="radio" name="option" id="C">
+                <label for="C">C</label>
+            </td>
+            <td id="erropt"></td>
+        </tr>
+    </table>
+</body>
+</html>

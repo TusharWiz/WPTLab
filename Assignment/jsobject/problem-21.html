@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Populate list</title>
+    <script>
+        var arr=[]
+        function addname(){
+            var name=document.getElementById("nm").value;
+            if(arr.length<5)
+            arr.push(name)
+            document.getElementById("nm").value=""
+            console.log(arr)
+        }
+        function display(){
+            var str=""
+            for(a of arr){
+                 str += "<li>"+a+"</li>"
+            }
+
+            document.getElementById("list").innerHTML=str
+        }
+
+    </script>
+    <!-- <script src="jquery.js"></script>
+    <script>
+        arr=[]
+        $(document).ready(function(){
+            $('#btn').click(function(){
+                var name = $('#nm').val()
+               // alert(name)
+                arr.push(name)
+                $('#nm').val("")
+            })
+
+            $('#dis').click(function(){
+                var str=''
+                // arr.forEach(function(index){
+                //     str+='<li>'+arr[index]+'</li>'
+                // })
+
+                $('#list').html(str)
+
+            })
+        })
+    </script> -->
+</head>
+<body>
+    <table>
+        <tr>
+            <td><input type="text" name="nm" id="nm"></td>
+            <!-- <td><button type="button" name="btn" id="btn" onclick="addname()">submit</button></td>
+            <td><button type="button" name="dis" id="dis" onclick="display()">display</button></td>
+         -->
+
+         <td><button type="button" name="btn" id="btn">submit</button></td>
+            <td><button type="button" name="dis" id="dis">display</button></td>
+        </tr>
+    </table>
+    <ol id="list"></ol>
+</body>
+</html>

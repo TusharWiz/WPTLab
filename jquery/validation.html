@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Input  Validation</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $('#btn').click(
+            function namevalidation(){
+                var nm=$('#name').val();
+                alert(nm)
+
+                if(nm.trim().length===0){
+                    var name="tushar"
+                    
+                }
+            })
+        }
+        )
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Name :</td>
+            <td><input type="text" name="name" id="name"></td>
+            <td id="errrnm"></td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td><button type="button" id="btn" name="btn" onclick="namevalidation()">submit</button></td>
+        </tr>
+    </table>
+</body>
+</html>

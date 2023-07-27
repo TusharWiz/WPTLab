@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Object localStorage</title>
+</head>
+<body>
+    <script>
+        var person={name:"xyz",age:12,address:"Mumbai"}
+        var text = JSON.stringify(person)
+        localStorage.setItem("person",text)
+
+        console.log(text)
+        var ob = JSON.parse(localStorage.getItem("person"))
+        console.log(ob)
+    </script>
+</body>
+</html>

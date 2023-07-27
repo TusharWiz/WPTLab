@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Event</title>
+    <script>
+        function change(ev){
+            var ob = event.target.value
+            alert(ob)
+        }
+    </script>
+</head>
+<body>
+    <input type="checkbox" id="a" name="check" onchange="change(event)">
+    <label for="a">a</label>
+
+    <input type="checkbox" id="b" name="chek" onchange="change(event)">
+    <label for="b">b</label>
+    <input type="checkbox" id="c" name="chek" onchange="change(event)">
+    <label for="c">c</label>
+</body>
+</html>

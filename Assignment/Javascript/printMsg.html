@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <title>Message Print</title>
+    <script>
+        function print(){
+            var num =parseInt(document.getElementById("num").value)
+            var str=document.getElementById("str").value
+
+            for(var i=0;i<num;i++){
+                document.getElementById("output").innerHTML+="<br>"+str 
+            }
+            document.getElementById("str").value=""
+        
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr><td>Number :</td>
+            <td><input type="text" id="num"></td>
+        </tr>
+        <tr>
+            <td>Enter String :</td>
+            <td><input type="text" id="str"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button type="button" id="btn" onclick="print()">Print String</button>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+    <div id="output">
+    </div>
+    
+</body>
+</html>

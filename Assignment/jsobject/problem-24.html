@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>login form</title>
+    <script src="jquery.js"></script>
+    <script>
+
+        
+        $(document).ready(function(){
+            function username(){
+            var name=$('#username').val()
+            console.log(name.trim().length)
+            var n = /[a-z A-Z ^0-9]/
+            var r = name.search(n)
+            console.log(r)
+            if(name.trim().length<10 && name.trim().length>6 && r>=0 ){
+                $('#errnm').html("")
+                return true;
+            }
+            else{
+                $('#errnm').html("Enter valid username")
+                return false;
+            }
+        }
+        function password(){
+            var pass=$('#pass').val()
+        
+
+        }
+
+       $('input[type=text]').focus(function(){
+        $(this).css("background-color","yellow")
+       })
+
+       $('input[type=text]').blur(function(){
+        $(this).css('background-color','white')
+       })
+
+       $('#btn').click(function(){
+                var f1 =username()
+                var f2 = password()
+            })
+        })
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Enter the username</td>
+            <td><input type="text" name="username" id="username" placeholder="range:6-10 All Alphabet"></td>
+            <td id="errnm"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="text" name="pass" id="pass"></td>
+            <td id="errpass"></td>
+        </tr>
+        <tr>
+            <td><button type="button" id="btn" name="btn">Login</button></td>
+        </tr>
+    </table>
+</body>
+</html>

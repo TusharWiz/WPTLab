@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product detail</title>
+    <script>
+        // var proarr =[{pid:1,name:"chair",price:1000},{pid:2,name:"ball",price:20}]
+        var proarr=[]
+        var displayTable=()=>{
+               var str="<table border='2'><tr><th>Product Id</th><th>Product name</th><th>Price</th> </tr>" 
+                for(var ob of proarr){
+                    str+=`<tr><td>${ob.pid}</td><td>${ob.name}</td><td>${ob.price}</td></tr>`
+                }
+                str+="</table>"
+                document.getElementById("mydiv").innerHTML=str;
+            }
+        function add(){
+            var pid= parseInt(document.getElementById("pid").value)
+            var name= document.getElementById("name").value
+            var price = parseFloat(document.getElementById("price").value)
+
+            var ob ={pid,name,price}
+            proarr.push(ob)
+            console.log(proarr)
+            displayTable();
+        }
+    </script>
+</head>
+<body>
+    
+    PID :<input type="text" id="pid" >
+    name :<input type="text" id="name" >
+    price : <input type="text" id="price" >
+    <button type="button" id="btn" value="btn" onclick="add()">Add product</button>
+
+    <div id="mydiv"></div>
+</body>
+</html>

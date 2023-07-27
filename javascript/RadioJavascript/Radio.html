@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="../JSfunction/Radio.js"></script>
+</head>
+<body>
+    <form>
+        Number1: <input type="text" id="num1" name="num1" required autofocus><br>
+        Number2: <input type="text" id="num2" name="num2" required><br>
+        Result: <input type="text" id="result" name="result" readonly><br>
+        <input type="radio" id="add" value="add" value="add" name="operation">
+        <label for="add">Addition</label>
+        <input type="radio" id="sub" value="mul" value="sub" name="operation">
+        <label for="sub">Subtraction</label>
+        <input type="radio" id="fact" value="fact" name="operation" value="fact">
+        <label for="fact">Factorial</label><br>
+
+        <button type="button" id="btn" name="btn" value="btn" onclick="CalculateResult()">Calculate Result</button>
+    </form>
+</body>
+</html>

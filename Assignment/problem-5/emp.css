@@ -1,0 +1,14 @@
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    background-color: #96D4D4;
+  }
+  #name{
+    width: 50%;
+  }
+
+  #code{
+    width: 30%;
+  }

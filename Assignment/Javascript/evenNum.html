@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>List of Even number</title>
+    <script>
+        function printEvenNo(){
+            var n1= parseInt(document.getElementById("num").value);
+            for(var i=1;i<=n1;i++){
+                document.getElementById("output").innerHTML+=" "+((i%2==0)?i:"")
+            }
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Number :</td>
+            <td><input type="text" id="num" name="num"></td>
+        </tr>
+
+        <tr>
+           <td colspan="2" align="center"><button type="button" id="btn" name="btn" onclick="printEvenNo()">Result</button></td> 
+        </tr>
+    </table>
+
+    <div id="output">
+            <br>
+    </div>
+</body>
+</html>

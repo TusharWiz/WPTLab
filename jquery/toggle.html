@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Toggle</title>
+
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btn').click(function(){
+                $('#div1').toggle(1000)
+                $('#div2').toggle(1000)
+
+            })
+
+            $('#btn1').click(function(){
+                $('#div1').show(1000)
+                $('#div2').hide(1000)
+            })
+
+            $('#btn2').click(function(){
+                $('#div2').show(1000)
+                $('#div1').hide(1000)
+            })
+        })
+    </script>
+</head>
+<body>
+
+    <div id="div1">
+        <h1>Mobile</h1>
+        <ul>
+            <li>mobile</li>
+            <li>phone</li>
+            <li>laptop</li>
+        </ul>
+    </div>
+
+    <div id="div2">
+        <h1>Name</h1>
+        <ul>
+            <li>vijay</li>
+            <li>sham</li>
+            <li>ram</li>
+        </ul>
+    </div>
+    <button type="button" id="btn" name="btn">toggle</button>
+    <button type="button" id="btn1" name="btn1">hide</button>
+    <button type="button" id="btn2" name="btn2">show</button>
+    
+</body>
+</html>

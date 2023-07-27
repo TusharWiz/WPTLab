@@ -1,0 +1,21 @@
+table th,td{
+    border: 1px solid rgb(81, 78, 78);
+    border-collapse: collapse;
+
+}
+.month{
+        background-color: yellow;
+}
+.day{
+    background-color: palevioletred;
+}
+.sat{
+    background-color: aqua;
+}
+
+.sun{
+    background-color: green;
+}
+.week{
+    background-color: yellow;
+}

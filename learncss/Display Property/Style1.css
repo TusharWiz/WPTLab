@@ -1,0 +1,38 @@
+.container{
+    width: 500px;
+    height: 400px;
+    background-color: aquamarine;
+    margin: 30%;
+}
+
+.red{
+    position:fixed ;
+    width: 30%;
+    height:25%;
+    background-color: red;
+    left: 0%;
+   top: 0%;
+
+}
+.green{
+    width: 30%;
+    height: 25%;
+    background-color: green;
+
+}
+.blue{
+    position: absolute;
+    width: 30%;
+    height: 25%;
+    background-color: blue;
+    left: 100%;
+    top: 100%;
+
+
+}
+.yellow{
+    width: 30%;
+    height: 25%;
+    background-color: yellow;
+
+}
